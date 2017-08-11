@@ -3,32 +3,38 @@
     Bem vindo ao Contatooh
   </h1>
 
-
-  <p>
-    Contatos cadastrados: {{total}} -  
-    <button class="btn btn-primary" ng-click="incrementa()">Novo</button>
-  </p>
-  <p>Pesquisar por:
-    <input ng-model="filtro" type="search" placeholder="parte do nome" />
-  </p>
-
-  <div class="table-responsive">
-    <table class="table table-hover">
-      <tr>
-        <th>NOME</th>
-        <th>E-MAIL</th>
-        <th class="text-center">Ação</th>
-      </tr>
-      <tr ng-repeat="contato in contatos | filter: filtro">
-        <td><a>{{contato.nome}}</a></td>
-        <td>{{contato.email}}</td>
-        <td class="text-center">
-          <button class="btn btn-warning">
-            Remover
-          </button>
-        </td>
-      </tr>
-    </table>
+  <div ng-hide="contatos.length">
+    <p class="text-info">Não há contatos cadastrados</p>
   </div>
+
+  <div ng-hide="!contatos.length">
+    <p ng-show="mensagem.texto">{{mensagem.texto}}</p>
+    <p>
+      Contatos cadastrados: {{contatos.length}} -  
+      <button class="btn btn-primary">Novo</button>
+    </p>
+    <p>Pesquisar por:
+      <input ng-model="filtro" type="search" placeholder="parte do nome" />
+    </p>
+    <div class="table-responsive">
+      <table class="table table-hover table-bordered">
+        <tr>
+          <th>NOME</th>
+          <th>E-MAIL</th>
+          <th class="text-center">Ação</th>
+        </tr>
+        <tr ng-repeat="contato in contatos | filter: filtro">
+          <td class="col-md-5"><a ng-href="#/contato/{{contato._id}}">{{contato.nome}}</a></td>
+          <td class="col-md-5">{{contato.email}}</td>
+          <td class="text-center col-md-2">
+            <button class="btn btn-warning" ng-click="remove(contato)">
+              Remover
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
 </div>
 
