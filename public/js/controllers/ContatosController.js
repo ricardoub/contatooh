@@ -2,6 +2,7 @@ angular.module('contatooh').controller('ContatosController',
   function($scope, $resource){
 
     $scope.contatos = [];
+    $scope.total = 0;
     $scope.filtro = '';
     $scope.mensagem = { texto: ''};
 

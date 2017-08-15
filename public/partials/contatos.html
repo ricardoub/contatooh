@@ -3,6 +3,9 @@
     Bem vindo ao Contatooh
   </h1>
 
+  <!--button class="btn btn-primary">Novo</button-->
+  <a ng-href="#/contato" class="btn btn-primary">Novo Contatooh</a>
+  <hr/>
   <div ng-hide="contatos.length">
     <p class="text-info">Não há contatos cadastrados</p>
   </div>
@@ -11,7 +14,6 @@
     <p ng-show="mensagem.texto">{{mensagem.texto}}</p>
     <p>
       Contatos cadastrados: {{contatos.length}} -  
-      <button class="btn btn-primary">Novo</button>
     </p>
     <p>Pesquisar por:
       <input ng-model="filtro" type="search" placeholder="parte do nome" />
