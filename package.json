@@ -1,26 +1,19 @@
 {
   "name": "contatooh",
   "version": "1.0.0",
-  "description": "Contatooh",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ricardoub/contatooh.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ricardoub/contatooh/issues"
-  },
-  "homepage": "https://github.com/ricardoub/contatooh#readme",
   "dependencies": {
     "body-parser": "^1.6.7",
     "ejs": "^0.8.8",
     "express": "^4.8.8",
-    "express-load": "^1.1.16",
+    "express-load": "^1.1.14",
     "method-override": "^2.1.3",
     "mongodb": "^2.2.31",
     "mongoose": "^4.11.7"
