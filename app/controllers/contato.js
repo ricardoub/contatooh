@@ -2,7 +2,7 @@ module.exports = function (app) {
 
   var Contato = app.models.contato;
 
-  var controller = {}
+  var controller = {};
 
   controller.listaContatos = function(req, res) {
     

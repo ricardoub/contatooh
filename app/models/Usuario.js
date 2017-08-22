@@ -1,4 +1,4 @@
-var mongoose = require('mongose');
+var mongoose = require('mongoose');
 var findOrCreate = require('mongoose-findorcreate');
 
 module.exports = function() {
@@ -22,5 +22,5 @@ module.exports = function() {
   });
 
   schema.plugin(findOrCreate);
-  return mongoose.model('Usuario, schema');
+  return mongoose.model('Usuario', schema);
 }

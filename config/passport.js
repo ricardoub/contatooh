@@ -1,5 +1,6 @@
 var passport = require('passport');
 var GitHubStrategy = require('passport-github').Strategy;
+var findorCreate = require('mongoose-findorcreate');
 var mongoose = require('mongoose');
 
 module.exports = function() {
@@ -23,6 +24,18 @@ module.exports = function() {
         return done(null, usuario);
       }
     );
-    
+
   }));
+
+  passport.serializeUser(function(usuario, done){
+    done(null, usuario._id);
+  });
+
+  passport.deserializeUser(function(id, done) {
+    Usuario.findById(id).exec()
+      .then(function(usuario){
+        done(null, usuario);
+      });
+  });
+  
 }
