@@ -21,4 +21,5 @@ angular.module('contatooh',['ngRoute', 'ngResource'])
     });
 
     $routeProvider.otherwise({redirectTo: '/contatos'});
+    
 });

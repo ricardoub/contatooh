@@ -12,9 +12,10 @@ module.exports = function (app) {
 
   app.route('/contatos')
   	.get(verificaAutenticacao, controller.listaContatos)
-  	.post(verificaAutenticacao, controller.salvaContato)
+  	.post(verificaAutenticacao, controller.salvaContato);
 
   app.route('/contatos/:id')
 	.get(verificaAutenticacao, controller.obtemContato)
-	.delete(verificaAutenticacao, controller.removeContato);
+  .delete(verificaAutenticacao, controller.removeContato);
+  
 };
