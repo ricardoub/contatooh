@@ -7,12 +7,22 @@ module.exports = function(grunt) {
         cwd: '.',
         src: [
           '**',
-          '!Gruntfile.js', '!package.json', '!bower.json'
+          '!Gruntfile.js', '!package.json', '!bower.json',
+          '!node_modules'
         ],
         dest: 'dist'
+      }
+    },
+    clean: {
+      dist: {
+        src: 'dist'
       }
     }
   });
 
+  grunt.registerTask('default', ['dist']);
+  grunt.registerTask('dist', ['clean', 'copy']);
+
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 };
